@@ -1,6 +1,9 @@
 source("R/00_setup.R")
 
-
+path_save <- "res"
+if(!(dir.exists("res"))) {
+  dir.create("res", recursive = T)
+}
 # Simplify shape
 # NEA_cropped <- NEA %>% 
 #   st_as_sf() %>% 
@@ -56,4 +59,4 @@ gg_gif <- ggplot() +
 
 
 animate(gg_gif, fps = 10, width = 750, height = 450)
-anim_save("nations.gif")
+anim_save("res/trawl.gif")
